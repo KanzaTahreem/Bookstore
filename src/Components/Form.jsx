@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 
 const Form = (props) => {
   const { newBookFunc } = props;
-  // const [title, setTitle] = useState('');
-  // const [author, setAuthor] = useState('');
+
   const [newBook, setNewBook] = useState({
     title: '',
     author: '',
@@ -15,12 +14,6 @@ const Form = (props) => {
       ...newBook,
       [e.target.name]: e.target.value,
     });
-
-    // if (e.target.name === 'title') {
-    //   setTitle(e.target.value);
-    // } else if (e.target.name === 'author') {
-    //   setAuthor(e.target.value);
-    // }
   };
 
   const addBookToList = (e) => {
