@@ -1,36 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Book from '../Components/Book';
 import Form from '../Components/Form';
+import { removeBook } from '../redux/books/books';
 
 const Books = () => {
-  const [bookList, setBookList] = useState([
-    { title: 'test', author: 'Test author' },
-    { title: 'test', author: 'Test author 2' },
-  ]);
+  const bookList = useSelector((state) => state.books);
+  const dispatch = useDispatch();
 
-  const addNewBook = (title, author) => {
-    const newBook = {
-      title,
-      author,
-    };
-
-    setBookList([
-      ...bookList,
-      newBook,
-    ]);
+  const removeBookFromList = (id) => {
+    dispatch(removeBook(id));
   };
 
   return (
     <section>
       <ul>
         {bookList.map((book) => (
-          <li key={book.key}>
-            <Book title={book.title} author={book.author} />
-            <button type="button">Remove</button>
+          <li key={book.id}>
+            <Book title={book.title} author={book.author} id={book.id} />
+            <button type="button" onClick={() => removeBookFromList(book.id)}>Remove</button>
           </li>
         ))}
       </ul>
-      <Form newBookFunc={addNewBook} />
+      <Form />
     </section>
   );
 };

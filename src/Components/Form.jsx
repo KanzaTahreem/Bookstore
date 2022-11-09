@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../redux/books/books';
 
-const Form = (props) => {
-  const { newBookFunc } = props;
-
+const Form = () => {
+  const dispatch = useDispatch();
   const [newBook, setNewBook] = useState({
     title: '',
     author: '',
@@ -18,7 +18,10 @@ const Form = (props) => {
 
   const addBookToList = (e) => {
     e.preventDefault();
-    newBookFunc(newBook.title, newBook.author);
+    dispatch(addBook({
+      title: newBook.title,
+      author: newBook.author,
+    }));
     setNewBook({
       title: '',
       author: '',
@@ -29,17 +32,13 @@ const Form = (props) => {
     <section>
       <form>
         <div>
-          <input type="text" name="title" id="name" value={newBook.title} placeholder="Title" onChange={handleChange} required />
-          <input type="text" name="author" id="author" value={newBook.author} placeholder="Author" onChange={handleChange} required />
+          <input type="text" name="title" id="name" value={newBook.title} placeholder="Title" onChange={handleChange} />
+          <input type="text" name="author" id="author" value={newBook.author} placeholder="Author" onChange={handleChange} />
         </div>
         <button type="submit" onClick={addBookToList}> Add Book </button>
       </form>
     </section>
   );
-};
-
-Form.propTypes = {
-  newBookFunc: PropTypes.func.isRequired,
 };
 
 export default Form;
