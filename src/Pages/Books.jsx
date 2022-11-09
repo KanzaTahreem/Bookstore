@@ -1,10 +1,11 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Book from '../Components/Book';
 import Form from '../Components/Form';
 
 const Books = () => {
   const bookList = useSelector((state) => state.books);
+  const dispatch = useDispatch();
 
   return (
     <section>
