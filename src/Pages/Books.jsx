@@ -8,17 +8,17 @@ const Books = () => {
   const bookList = useSelector((state) => state.books);
   const dispatch = useDispatch();
 
-  const removeBookFromList = (id) => {
-    dispatch(removeBook(id));
+  const removeBookFromList = (itemId) => {
+    dispatch(removeBook(itemId));
   };
 
   return (
     <section>
       <ul>
         {bookList.map((book) => (
-          <li key={book.id}>
+          <li key={book.item_id}>
             <Book title={book.title} author={book.author} category={book.category} />
-            <button type="button" onClick={() => removeBookFromList(book.id)}>Remove</button>
+            <button type="button" onClick={() => removeBookFromList(book.item_id)}>Remove</button>
           </li>
         ))}
       </ul>

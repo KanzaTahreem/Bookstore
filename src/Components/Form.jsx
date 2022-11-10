@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/books';
+import { postBook } from '../redux/books/books';
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -19,7 +20,8 @@ const Form = () => {
 
   const addBookToList = (e) => {
     e.preventDefault();
-    dispatch(addBook({
+    dispatch(postBook({
+      item_id: uuidv4(),
       title: newBook.title,
       author: newBook.author,
       category: newBook.category,
@@ -37,7 +39,7 @@ const Form = () => {
         <div>
           <input type="text" name="title" id="name" value={newBook.title} placeholder="Title" onChange={handleChange} />
           <input type="text" name="author" id="author" value={newBook.author} placeholder="Author" onChange={handleChange} />
-          <select type="text" id="category" name="category" value={newBook.category} placeholder="Category" onChange={handleChange}>
+          <select type="text" name="category" id="category" value={newBook.category} placeholder="Category" onChange={handleChange}>
             <option value="" disabled>Categories</option>
             <option value="horror">Horror</option>
             <option value="fantasy">Fantasy</option>
