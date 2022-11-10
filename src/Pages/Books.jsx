@@ -17,7 +17,7 @@ const Books = () => {
       <ul>
         {bookList.map((book) => (
           <li key={book.id}>
-            <Book title={book.title} author={book.author} id={book.id} />
+            <Book title={book.title} author={book.author} category={book.category} />
             <button type="button" onClick={() => removeBookFromList(book.id)}>Remove</button>
           </li>
         ))}
