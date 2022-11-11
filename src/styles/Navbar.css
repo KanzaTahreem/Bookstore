@@ -1,0 +1,54 @@
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 1.2rem 6.25rem;
+  align-items: center;
+  background-color: #fff;
+  letter-spacing: 1.9px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.title {
+  color: #0290ff;
+  font-weight: bold;
+  font-size: 1.875rem;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  gap: 3rem;
+}
+
+a {
+  text-decoration: none;
+  color: #121212;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.813rem;
+  height: 2.813rem;
+  color: #0290ff;
+  border: 1px solid #e8e8e8;
+}
+
+.user > svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.activelink {
+  color: #121212;
+  opacity: 1;
+}
