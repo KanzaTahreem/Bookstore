@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import Navbar from './Components/Navbar';
 import Books from './Pages/Books';
 import Categories from './Pages/Categories';
-import { getBooks } from './redux/books/books';
+import getBooks from './redux/books/thunkAPI/get_books';
 
 function App() {
   const dispatch = useDispatch();

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { postBook } from '../redux/books/books';
+import postBook from '../redux/books/thunkAPI/post_book';
 
 const Form = () => {
   const dispatch = useDispatch();

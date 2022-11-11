@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Book from '../Components/Book';
 import Form from '../Components/Form';
-import { deleteBook } from '../redux/books/books';
+import deleteBook from '../redux/books/thunkAPI/delete_book';
 
 const Books = () => {
   const bookList = useSelector((state) => state.books);
