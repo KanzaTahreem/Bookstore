@@ -6,6 +6,7 @@ const REMOVE_BOOK = 'books/REMOVE_BOOK';
 const LOAD_BOOKS = 'books/LOAD_BOOKS';
 const POST_BOOK = 'books/POST_BOOK';
 const GET_BOOKS = 'books/GET_BOOK';
+const DELETE_BOOK = 'books/DELETE_BOOK';
 
 const initialState = [];
 
@@ -17,6 +18,11 @@ export const addBook = (book) => ({
 export const loadBooks = (books) => ({
   type: LOAD_BOOKS,
   books,
+});
+
+export const removeBook = (itemId) => ({
+  type: REMOVE_BOOK,
+  itemId,
 });
 
 export const postBook = createAsyncThunk(POST_BOOK, async (book, thunkAPI) => {
@@ -43,9 +49,19 @@ export const getBooks = createAsyncThunk(GET_BOOKS, async (_, thunkAPI) => {
   return responseJSON;
 });
 
-export const removeBook = (itemId) => ({
-  type: REMOVE_BOOK,
-  itemId,
+export const deleteBook = createAsyncThunk(DELETE_BOOK, async (itemId, thunkAPI) => {
+  const response = await fetch(`${FETCH_BOOK_URL}/${itemId}`, {
+    method: 'DELETE',
+    body: JSON.stringify({
+      item_id: itemId,
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  const responseJSON = await response.text();
+  thunkAPI.dispatch(removeBook(itemId));
+  return responseJSON;
 });
 
 const bookReducer = (state = initialState, action) => {
@@ -54,9 +70,8 @@ const bookReducer = (state = initialState, action) => {
       return [...state, action.book];
 
     case REMOVE_BOOK: {
-      const filteredBooks = state.filter((book) => book.item_id !== action.item_id);
-      const updatedArray = filteredBooks.map((book, index) => ({ ...book, item_id: index + 1 }));
-      return [...updatedArray];
+      const filteredBooks = state.filter((book) => book.item_id !== action.itemId);
+      return filteredBooks;
     }
     case LOAD_BOOKS: {
       const bookList = [];
