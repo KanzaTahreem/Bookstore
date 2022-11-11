@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../styles/Book.css';
 
 const Book = (props) => {
   const { title, author, category } = props;
   return (
-    <div>
-      <h2>{title}</h2>
-      <h3>{author}</h3>
-      <h4>{category}</h4>
+    <div className="book-details">
+      <div>
+        <p className="category">{category}</p>
+        <h2 className="book-title">{title}</h2>
+        <p className="author">{author}</p>
+      </div>
     </div>
   );
 };
