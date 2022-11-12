@@ -20,7 +20,7 @@
   font-size: 1.875rem;
 }
 
-ul {
+.nav-links {
   list-style-type: none;
   display: flex;
   gap: 3rem;
@@ -41,6 +41,7 @@ a {
   height: 2.813rem;
   color: #0290ff;
   border: 1px solid #e8e8e8;
+  border-radius: 50%;
 }
 
 .user > svg {
