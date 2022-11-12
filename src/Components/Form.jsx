@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import postBook from '../redux/books/thunkAPI/post_book';
+import '../styles/Form.css';
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -34,7 +35,8 @@ const Form = () => {
   };
 
   return (
-    <section>
+    <section className="form-container">
+      <h2 className="form-title">Add new book</h2>
       <form>
         <div>
           <input type="text" name="title" id="name" value={newBook.title} placeholder="Title" onChange={handleChange} />
@@ -51,7 +53,7 @@ const Form = () => {
             <option value="programming">Programming</option>
           </select>
         </div>
-        <button type="submit" onClick={addBookToList}> Add Book </button>
+        <button type="submit" className="submit-btn" onClick={addBookToList}> Add Book </button>
       </form>
     </section>
   );
