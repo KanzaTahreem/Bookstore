@@ -14,45 +14,56 @@ const Books = () => {
   };
 
   return (
-    <section className="book-container">
-      <ul>
-        {bookList.map((book) => (
-          <li key={book.item_id} className="book-card">
-            <div className="left-col">
-              <Book title={book.title} author={book.author} category={book.category} />
-              <div className="actions-btn">
-                <button className="comment-btn btn" type="button">Comments</button>
-                <div className="divider" />
-                <button className="remove-btn btn" type="button" onClick={() => removeBookFromList(book.item_id)}>Remove</button>
-                <div className="divider" />
-                <button className="edit-btn btn" type="button">Edit</button>
+    <>
+      <section className="book-container">
+        <ul>
+          {bookList.map((book) => (
+            <li key={book.item_id} className="book-card">
+              <div className="left-col">
+                <Book title={book.title} author={book.author} category={book.category} />
+                <div className="actions-btn">
+                  <button className="comment-btn btn" type="button">Comments</button>
+                  <div className="divider" />
+                  <button className="remove-btn btn" type="button" onClick={() => removeBookFromList(book.item_id)}>Remove</button>
+                  <div className="divider" />
+                  <button className="edit-btn btn" type="button">Edit</button>
+                </div>
               </div>
-            </div>
 
-            <div className="center-col">
-              <div className="progress">
-                <div className="progress-bar" />
+              <div className="center-col">
+                <div className="progress">
+                  <div className="progress-bar" />
+                </div>
+                <div>
+                  <div className="percentage">
+                    {Math.floor(Math.random() * 101)}
+                    %
+                  </div>
+                  <div className="percent-completed">Completed</div>
+                </div>
               </div>
-              <div>
-                <div className="percentage">64%</div>
-                <div className="percent-completed">Completed</div>
-              </div>
-            </div>
 
-            <div className="column-divider" />
+              <div className="column-divider" />
 
-            <div className="right-col">
-              <div>
-                <div className="chapters">CURRENT CHAPTER</div>
-                <div className="completed-chapter">chapter 17 </div>
+              <div className="right-col">
+                <div>
+                  <div className="chapters">CURRENT CHAPTER</div>
+                  <div className="completed-chapter">
+                    chapter
+                    {' '}
+                    {Math.floor(Math.random() * 101)}
+                  </div>
+                </div>
+                <button type="button" className="progress-btn">UPDATE PROGRESS</button>
               </div>
-              <button type="button" className="progress-btn">UPDATE PROGRESS</button>
-            </div>
-          </li>
-        ))}
-      </ul>
+            </li>
+          ))}
+        </ul>
+      </section>
       <Form />
-    </section>
+
+    </>
+
   );
 };
 

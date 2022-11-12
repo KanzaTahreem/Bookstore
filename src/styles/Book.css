@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;800;900&display=swap');
 
 .book-container {
+  gap: 3em;
   display: flex;
   width: 80vw;
   flex-direction: column;
   margin: 0 auto;
-  gap: 3em;
+  padding: 2em 0;
   letter-spacing: 1.2px;
+  border-bottom: solid 1px #e8e8e8;
 }
 
 .book-container ul {
@@ -26,10 +28,6 @@
   padding: 1rem 2rem;
   margin-bottom: 1em;
   display: flex;
-}
-
-.book-card:first-child {
-  margin-top: 2em;
 }
 
 .book-title,
@@ -70,7 +68,7 @@
   border: none;
 }
 
-.btn:hover {
+.remove-btn:hover {
   cursor: pointer;
 }
 
@@ -109,10 +107,11 @@
 
 .right-col {
   flex: 0.5;
+  gap: 1.5em;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .chapters {
