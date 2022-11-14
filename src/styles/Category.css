@@ -1,0 +1,28 @@
+.category-container {
+  background: #fff;
+  width: 80vw;
+  margin: 2em auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  height: calc(100vh - (18vh + 2em));
+}
+
+.category-text {
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.category-btn {
+  border: none;
+  color: #fff;
+  font-size: 1em;
+  margin: 3em 0;
+  padding: 1.3rem 3.5rem;
+  align-self: center;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background-color: #0290ff;
+}

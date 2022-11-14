@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { checkStatus } from '../redux/categories/categories';
+import '../styles/Category.css';
 
 const Categories = () => {
   const categories = useSelector((state) => state.categories);
@@ -11,11 +12,10 @@ const Categories = () => {
   };
 
   return (
-    <>
-      <h1>Categiroes</h1>
-      <h2>{categories}</h2>
-      <div><button type="button" onClick={() => updateStatus()}>Check Status</button></div>
-    </>
+    <div className="category-container">
+      <h2 className="category-text">{categories}</h2>
+      <button type="button" className="category-btn" onClick={() => updateStatus()}>Check Status</button>
+    </div>
   );
 };
 

@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;800;900&display=swap');
+
+.book-container {
+  gap: 3em;
+  display: flex;
+  width: 80vw;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 2em 0;
+  letter-spacing: 1.2px;
+  border-bottom: solid 1px #e8e8e8;
+}
+
+.book-container ul {
+  list-style-type: none;
+  gap: 1rem;
+}
+
+.left-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.book-card {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  margin-bottom: 1em;
+  display: flex;
+}
+
+.book-title,
+.author,
+.btn,
+.chapters,
+.completed-chapter {
+  font-family: 'Roboto Slab', serif;
+}
+
+.category {
+  opacity: 0.5;
+  text-transform: capitalize;
+}
+
+.book-title {
+  letter-spacing: -0.3px;
+}
+
+.author {
+  color: #4386bf;
+}
+
+.actions-btn {
+  display: flex;
+  gap: 1.2em;
+  margin-top: 1rem;
+}
+
+.divider {
+  height: 1rem;
+  border: 1px solid #e5e5e7;
+}
+
+.btn {
+  color: #4386bf;
+  background: transparent;
+  border: none;
+}
+
+.remove-btn:hover {
+  cursor: pointer;
+}
+
+.center-col {
+  gap: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.progress {
+  width: 4.25rem;
+  height: 4.25rem;
+  border: 5px solid #4386bf;
+  border-left: 5px solid #f3f3f3;
+  border-radius: 50%;
+  transform: rotate(45deg);
+}
+
+.percentage {
+  font-size: 2rem;
+}
+
+.percent-completed {
+  opacity: 0.5;
+  font-size: 0.8rem;
+}
+
+.column-divider {
+  align-self: center;
+  border: 1px solid #e8e8e8;
+  height: 4.375rem;
+  margin: 0 4rem;
+  width: 0.125rem;
+}
+
+.right-col {
+  flex: 0.5;
+  gap: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.chapters {
+  opacity: 0.5;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.completed-chapter {
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.progress-btn {
+  background: #0290ff;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  border: none;
+  color: #fff;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
