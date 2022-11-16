@@ -8,25 +8,27 @@ _Bookstore_, built with _**React**_ and _**Redux**_, is a website that helps you
 - Add a book.
 - Remove a selected book.
 
-To get a JavaScript version of the app, follow [Awesome Books](https://github.com/KanzaTahreem/Awesome-Books).
+[Bookstore API](https://www.notion.so/Bookstore-API-51ea269061f849118c65c0a53e88a739) is used to add and remove books.
+
+To get a pure JavaScript version of the app, follow [Awesome Books](https://github.com/KanzaTahreem/Awesome-Books).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Built With
 
-- HTML
-- CSS
+- HTML/CSS
 - JavaScript
 - Babel
-- JSX
 - React
+- Redux
 - Webpack
+- [Bookstore API](https://www.notion.so/Bookstore-API-51ea269061f849118c65c0a53e88a739)
 - [React Router](https://reactrouter.com/en/main)
 - [Linters](https://github.com/microverseinc/linters-config/tree/master/react-redux)
 
 ## Live Demo Link
 
-[Loading . . . ]()
+[Bookstore](https://ks-bookstore.netlify.app/)
 
 ## Getting Started
 
